@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-  validates :name, :address, :gender, presence: true
+  has_one :address
+  validates :name, :gender, :email, :password, presence: true
 end

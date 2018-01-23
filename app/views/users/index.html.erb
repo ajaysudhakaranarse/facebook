@@ -1,0 +1,13 @@
+<b>Hello world</b>
+<center>
+<h1>User table</h1>
+<body bgcolor = 'blue'>
+<table border="1">
+<% @users.each do |user| %>
+  <tr><td><%= user.id %></td>
+  <td><%= user.name %></td>
+  <td><%= user.password %></td></tr>
+<% end %>
+</table>
+</body>
+</center>
