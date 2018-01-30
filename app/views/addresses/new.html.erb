@@ -1,0 +1,14 @@
+<h1>Hello</h1>
+<form>
+  <%= form_with scope: :address, url: user_addresses_path(@user), local: true do |form|%>
+  <%= form.label :City %>
+  <%= form.text_field :city %><br><br>
+
+  <%= form.label :State %>
+  <%= form.text_field :state %><br><br>
+
+  <%= form.label :Country %>
+  <%= form.text_field :country %>
+
+  <%= form.submit %>
+  <% end %>

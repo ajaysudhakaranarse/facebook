@@ -1,0 +1,41 @@
+<h1>Edit user</h1>
+
+<%= form_with(model: @user) do |form| %>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this user from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.label :Name%><br>
+  <%= form.text_field :name%><br><br>
+
+  <%= form.label :Password%><br>
+  <%= form.password_field :password%><br><br>
+
+  <%= form.label :'Confirm Password'%><br>
+  <%= form.password_field :password_confirmation%><br><br>
+
+  <%= form.label :Gender%><br>
+  <%= form.radio_button :gender, true, :class => 'form-control radio-inline' %> Male
+  <%= form.radio_button :gender, false, :class => 'form-control radio-inline' %>Female<br><br>
+
+  <%= form.label :Email%><br>
+  <%= form.text_field :email%><br><br>
+
+  <%= form.label :'Date Of Birth'%><br>
+  <%= form.date_field :date_of_birth%><br><br>
+
+  <%= form.button :submit%>
+  <%= form.button :reset%>
+
+<% end %>
+<%= link_to 'back', users_path%>
